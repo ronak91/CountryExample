@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'io.fabric'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
@@ -9,10 +9,10 @@ android {
     buildToolsVersion "29.0.0"
     defaultConfig {
         applicationId "com.country.app"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName "1.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -30,6 +30,7 @@ def daggerVersion = '2.0'
 def glideVersion = '4.10.0'
 def mockitoVersion = '2.11.0'
 def rxjavaVersion = '2.0.1'
+def firebaseVersion = '17.2.0'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -44,8 +45,11 @@ dependencies {
 
     implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rxjavaVersion"
-
-
+    // add the Firebase SDK for Google Analytics
+    implementation "com.google.firebase:firebase-analytics:$firebaseVersion"
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
     implementation "com.android.support:recyclerview-v7:$SupportVersion"
 
     implementation "com.github.bumptech.glide:glide:$glideVersion"
@@ -59,3 +63,5 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
+
+apply plugin: 'com.google.gms.google-services'
