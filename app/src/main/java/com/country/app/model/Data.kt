@@ -1,3 +1,3 @@
 package com.country.app.model
 
-data class Country(var countryName : String?)
+data class Countries(var countryName : String?)

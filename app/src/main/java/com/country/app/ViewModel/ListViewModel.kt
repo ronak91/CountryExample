@@ -2,12 +2,12 @@ package com.country.app.ViewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.country.app.model.Country
+import com.country.app.model.Countries
 
 
 class ListViewModel : ViewModel(){
 
-    val country = MutableLiveData<List<Country>>()
+    val countries = MutableLiveData<ArrayList<Countries>>()
     val countryLoadError = MutableLiveData<Boolean>()
     val loading = MutableLiveData<Boolean>()
 
@@ -16,23 +16,23 @@ class ListViewModel : ViewModel(){
     }
 
     private fun fetchCountries() {
-        val mockData = listOf(
-            Country("CountryA"),
-            Country("CountryB"),
-            Country("CountryC"),
-            Country("CountryD"),
-            Country("CountryE"),
-            Country("CountryF"),
-            Country("CountryG"),
-            Country("CountryH"),
-            Country("CountryI"),
-            Country("CountryJ"),
-            Country("CountryK"),
-            Country("CountryL")
+        val mockData = arrayListOf(
+            Countries("CountryA"),
+            Countries("CountryB"),
+            Countries("CountryC"),
+            Countries("CountryD"),
+            Countries("CountryE"),
+            Countries("CountryF"),
+            Countries("CountryG"),
+            Countries("CountryH"),
+            Countries("CountryI"),
+            Countries("CountryJ"),
+            Countries("CountryK"),
+            Countries("CountryL")
         )
 
         countryLoadError.value = false
         loading.value = false
-        country.value = mockData
+        countries.value = mockData
     }
 }
