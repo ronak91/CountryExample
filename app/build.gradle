@@ -33,12 +33,14 @@ def rxjavaVersion = '2.0.1'
 def firebaseVersion = '17.2.0'
 def crashlyticsVersion = '2.10.1'
 def constraintlayoutVersion = '1.1.3'
+def appcompatXVersion = '1.1.0'
+def ktXVersion = '1.1.0'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation "androidx.appcompat:appcompat:$appcompatXVersion"
+    implementation "androidx.core:core-ktx:$ktXVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
 
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
@@ -51,11 +53,8 @@ dependencies {
     implementation "com.google.firebase:firebase-analytics:$firebaseVersion"
     implementation "com.crashlytics.sdk.android:crashlytics:$crashlyticsVersion"
     implementation "com.android.support:recyclerview-v7:$SupportVersion"
-
     implementation "com.github.bumptech.glide:glide:$glideVersion"
-
     implementation "com.android.support:appcompat-v7:$SupportVersion"
-
     implementation "android.arch.lifecycle:extensions:$lifeCycleExtentionVersions"
 
     testImplementation 'junit:junit:4.12'

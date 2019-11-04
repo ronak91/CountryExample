@@ -1,3 +1,12 @@
 package com.country.app.model
 
-data class Countries(var countryName : String?)
+import com.google.gson.annotations.SerializedName
+
+data class Countries(
+    @SerializedName("name")
+    val countryName: String?,
+    @SerializedName("capital")
+    val capital: String?,
+    @SerializedName("flagPNG")
+    val flag: String?
+)
