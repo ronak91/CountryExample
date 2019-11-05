@@ -8,7 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class CountryService {
 
-    private val BASE_URL = "https://raw.githubusercontent.com"
+    private val BASE_URL = "https://api.jsonbin.io/b/"
+    private val SecretKey = "$2b$10$.q4CGx6rP3A07oKWLWIbhO7wbuQhzkDx90973wBiRbCiNjZ9iLxhK"
     private val api: CountriesApi
 
     init {
@@ -21,6 +22,6 @@ class CountryService {
     }
 
     fun getCountries(): Single<ArrayList<Countries>> {
-        return api.getCountries()
+        return api.getCountries(SecretKey)
     }
 }
