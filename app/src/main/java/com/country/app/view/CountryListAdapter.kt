@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.country.app.R
+import com.country.app.Utils.getProgressDrawable
+import com.country.app.Utils.loadImage
 import com.country.app.model.Countries
 import kotlinx.android.synthetic.main.item_country.view.*
 
@@ -28,10 +30,15 @@ class CountryListAdapter(var country: ArrayList<Countries>): RecyclerView.Adapte
 
     class CountryViewHolder(view:View): RecyclerView.ViewHolder(view){
 
+         private val countryFlag = view.imageFlag
          private val countryName = view.name
+         private val countryCapital = view.capital
+         private val progressDrawable = getProgressDrawable(view.context)
 
          fun bind(countries:Countries){
                 countryName.text = countries.countryName
-         }
+                countryCapital.text = countries.capital
+                countryFlag.loadImage(countries.flag, progressDrawable)
+          }
     }
 }

@@ -4,11 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/layout_height">
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:id="@+id/imageFlag"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:textSize="@dimen/text_hsize"
-        android:gravity="center"
-        tools:text="St. Luiseas Versinia"/>
+        android:layout_weight="1"
+        android:padding="@dimen/standard_padding" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_hsize"
+            android:gravity="center_vertical"
+            style="@style/Title"
+            tools:text="St. Luiseas Versinia"/>
+
+        <TextView
+            android:id="@+id/capital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text"
+            tools:text="St. Luiseas Versinia"/>
+
+
+    </LinearLayout>
+
 </LinearLayout>
